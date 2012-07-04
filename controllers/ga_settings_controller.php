@@ -14,6 +14,15 @@ namespace GaSettings
       #$footer = \WpMvc\CustomFooter::virgin();
 
       #$this->create_attribute_if_not_exists( $site, 'footer_content' );
+      $site = \WpMvc\Site::find( 1 );
+      $this->create_attribute_if_not_exists( $site, 'ga_script_block' );
+      $this->create_attribute_if_not_exists( $site, 'ga_tracking_id' );
+      $this->create_attribute_if_not_exists( $site, 'ga_access_token' );
+      $this->create_attribute_if_not_exists( $site, 'ga_request_token' );
+      $this->create_attribute_if_not_exists( $site, 'ga_secret' );
+
+      $this->create_attribute_if_not_exists( $site, 'ga_request_token_oauth_secret' );
+      $this->create_attribute_if_not_exists( $site, 'ga_active' );
 
       if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $site->takes_post( $_POST['site'] );

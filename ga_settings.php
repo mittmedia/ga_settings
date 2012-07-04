@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: OAS settings
-Plugin URI: https://github.com/mittmedia/oas_settings
-Description: Setup statistic tags for OAS
+Plugin Name: Google Analytics settings
+Plugin URI: https://github.com/mittmedia/ga_settings
+Description: Setup statistic tags for Google Analytics
 Version: 1.0.0
 Author: Fredrik Sundström
 Author URI: https://github.com/fredriksundstrom
@@ -36,15 +36,15 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 require_once( 'wp_mvc/init.php' );
 
-$ga_settings = new \WpMvc\Application();
+$ga_settings_app = new \WpMvc\Application();
 
-$ga_settings->init( 'GaSettings', WP_PLUGIN_DIR . '/ga_settings' );
+$ga_settings_app->init( 'GaSettings', WP_PLUGIN_DIR . '/ga_settings' );
 
 // WP: Add pages
 add_action( "network_admin_menu", "ga_settings" );
 function ga_settings()
 {
-  add_submenu_page( 'settings.php', 'GA settings Settings', 'GA settings', 'Super Admin', 'ga_settings_settings', 'ga_settings_settings_page');
+  add_submenu_page( 'settings.php', 'GA settings Settings', 'GA settings', 'Super Admin', 'ga_settings_settings', 'ga_settings_page');
 }
 
 function ga_settings_page()

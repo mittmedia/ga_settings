@@ -2,7 +2,7 @@
 
 <div class="wrap">
   <div id="icon-options-general" class="icon32"><br></div>
-  <h2><?php _e( 'Google Analytics Settings' ); ?></h2>
+  <h2><?php _e( 'Google Analytics Settings', 'ga-settings' ); ?></h2>
   <?php
 
   $content = array(

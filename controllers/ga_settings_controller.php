@@ -24,7 +24,7 @@ namespace GaSettings
       $this->create_attribute_if_not_exists( $site, 'ga_request_token_oauth_secret' );
       $this->create_attribute_if_not_exists( $site, 'ga_active' );
 
-      if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+      if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_GET['page'] ) && $_GET['page'] == 'ga_settings_settings' ) {
         $site->takes_post( $_POST['site'] );
 
         $site->save();

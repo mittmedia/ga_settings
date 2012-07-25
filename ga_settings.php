@@ -44,7 +44,7 @@ $ga_settings_app->init( 'GaSettings', WP_PLUGIN_DIR . '/ga_settings' );
 add_action( "network_admin_menu", "ga_settings" );
 function ga_settings()
 {
-  add_submenu_page( 'settings.php', 'GA settings Settings', 'GA settings', 'Super Admin', 'ga_settings_settings', 'ga_settings_page');
+  add_submenu_page( 'settings.php', 'GA settings Settings', 'GA settings', 'manage_network', 'ga_settings_settings', 'ga_settings_page');
 }
 
 function ga_settings_page()

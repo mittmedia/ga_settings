@@ -27,7 +27,7 @@
       'key' => 'meta_value',
       'description' => 'Script-tag för Google Analytics.'
     ),
-    array(
+    /*array(
       'title' => 'Tracking ID',
       'name' => $site->sitemeta->ga_tracking_id->meta_key,
       'type' => 'text',
@@ -71,7 +71,7 @@
       'default_value' => $site->sitemeta->ga_secret->meta_value,
       'key' => 'meta_value',
       'description' => 'Den här textsnutten lyfts in i sin helhet på alla bloggar för att fyllas i av Superadmin'
-    )
+    )*/
   );
 
   \WpMvc\FormHelper::render_form( $site, $content );

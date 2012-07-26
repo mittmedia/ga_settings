@@ -53,3 +53,20 @@ function ga_settings_page()
 
   $ga_settings_app->ga_settings_controller->index();
 }
+
+add_action('plugin_ga_statistics', 'ga_settings_show_ga_statistics');
+function ga_settings_show_ga_statistics()
+{
+  $site = \WpMvc\Site::find( 1 );
+
+  $ga_active = $site->sitemeta->ga_active->meta_value;
+
+  if (!isset($site->sitemeta->ga_active) || $ga_active != 'true')
+    return;
+
+  $ga_script_block = $site->sitemeta->ga_script_block->meta_value;
+
+  if (isset($site->sitemeta->ga_script_block) && trim($ga_script_block) != '') {
+    echo stripslashes($ga_script_block);
+  }
+}
